@@ -1,0 +1,6 @@
+@EMPApis_HostAddress = http://localhost:5128
+
+GET {{EMPApis_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

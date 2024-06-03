@@ -1,6 +1,5 @@
 using EMPApis.Repositories;
 using EmployeeAPI.Data;
-using EMPApis.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,14 +16,16 @@ builder.Services.AddDbContext<EmployeeContext>(options =>
 // Registering the repository
 builder.Services.AddScoped<IGetEmployee, EmployeeRepository>();
 
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

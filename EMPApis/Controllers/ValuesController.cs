@@ -32,7 +32,6 @@ namespace EMPApis.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
-        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Create(EmployeeModel employee)
         {
